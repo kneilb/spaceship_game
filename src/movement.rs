@@ -8,7 +8,7 @@ pub struct Velocity {
 }
 
 impl Plugin for MovementPlugin {
-    fn build(&self, app: &mut App ) {
+    fn build(&self, app: &mut App) {
         app.add_systems(Update, update_position);
     }
 }

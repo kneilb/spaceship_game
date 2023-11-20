@@ -24,6 +24,6 @@ fn main() {
         .add_plugins(asteroids::AsteroidPlugin)
         .add_plugins(camera::CameraPlugin)
         .add_plugins(movement::MovementPlugin)
-        .add_plugins(debug::DebugPlugin)
+        // .add_plugins(debug::DebugPlugin)
         .run();
 }

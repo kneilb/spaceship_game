@@ -17,8 +17,6 @@ impl Plugin for SpaceshipPlugin {
 }
 
 fn spawn_spaceship(mut commands: Commands, scene_assets: Res<SceneAssets>) {
-    // #Scene0 requests the 1st scene from a potentially multi-part gltf file
-    // let model_handle = ;
     commands.spawn(MovingObjectBundle {
         velocity: Velocity::new(STARTING_VELOCITY),
         acceleration: Acceleration::new(Vec3::ZERO),

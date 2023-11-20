@@ -18,6 +18,7 @@ impl Plugin for AssetLoaderPlugin {
 
 fn load_assets(mut scene_assets: ResMut<SceneAssets>, asset_server: Res<AssetServer>) {
     *scene_assets = SceneAssets {
+        // #Scene0 requests the 1st scene from a potentially multi-part gltf / glb file
         asteroid: asset_server.load("Asteroid.glb#Scene0"),
         spaceship: asset_server.load("Spaceship.glb#Scene0"),
         missile: asset_server.load("Missile.glb#Scene0"),

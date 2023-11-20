@@ -1,3 +1,4 @@
+mod asset_loader;
 mod asteroids;
 mod camera;
 mod debug;
@@ -18,6 +19,7 @@ fn main() {
         })
         .add_plugins(DefaultPlugins)
         // Game plugins.
+        .add_plugins(asset_loader::AssetLoaderPlugin)
         .add_plugins(spaceship::SpaceshipPlugin)
         .add_plugins(asteroids::AsteroidPlugin)
         .add_plugins(camera::CameraPlugin)

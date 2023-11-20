@@ -1,3 +1,4 @@
+mod asteroids;
 mod camera;
 mod debug;
 mod movement;
@@ -18,6 +19,7 @@ fn main() {
         .add_plugins(DefaultPlugins)
         // Game plugins.
         .add_plugins(spaceship::SpaceshipPlugin)
+        .add_plugins(asteroids::AsteroidPlugin)
         .add_plugins(camera::CameraPlugin)
         .add_plugins(movement::MovementPlugin)
         .add_plugins(debug::DebugPlugin)

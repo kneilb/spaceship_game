@@ -49,19 +49,32 @@ fn spaceship_movement_controls(
     let mut roll = 0.0;
     let mut movement = 0.0;
 
+    // No time.delta_seconds() here, that's already done in movement.rs
+    // Slightly clunky...
     if keyboard_input.pressed(KeyCode::W) {
         movement = SPACESHIP_SPEED
     } else if keyboard_input.pressed(KeyCode::S) {
         movement = -SPACESHIP_SPEED;
     }
 
+    if keyboard_input.pressed(KeyCode::A) {
+        rotation = SPACESHIP_ROTATION_SPEED * time.delta_seconds();
+    } else if keyboard_input.pressed(KeyCode::D) {
+        rotation = -SPACESHIP_ROTATION_SPEED * time.delta_seconds();
+    }
+
+    if keyboard_input.pressed(KeyCode::ShiftLeft) {
+        roll = SPACESHIP_ROLL_SPEED * time.delta_seconds();
+    } else if keyboard_input.pressed(KeyCode::ControlLeft) {
+        roll = -SPACESHIP_ROLL_SPEED * time.delta_seconds();
+    }
+
     // Update the spaceship's velocity based on new direction
     // NB. We have to negate this because the models & Bevy disagree on which way to face in Z!
     velocity.value = -transform.forward() * movement;
 
-    if keyboard_input.pressed(KeyCode::A) {
-        rotation = SPACESHIP_ROTATION_SPEED
-    } else if keyboard_input.pressed(KeyCode::D) {
-        rotation = SPACESHIP_ROTATION_SPEED
-    }
+    transform.rotate_y(rotation);
+
+    transform.rotate_local_z(roll);
+
 }

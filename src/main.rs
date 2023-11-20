@@ -3,6 +3,7 @@ mod asteroids;
 mod camera;
 mod collision_detection;
 mod debug;
+mod despawn;
 mod movement;
 mod spaceship;
 
@@ -26,6 +27,7 @@ fn main() {
         .add_plugins(camera::CameraPlugin)
         .add_plugins(movement::MovementPlugin)
         .add_plugins(collision_detection::CollisionDetectionPlugin)
+        .add_plugins(despawn::DespawnPlugin)
         // .add_plugins(debug::DebugPlugin)
         .run();
 }

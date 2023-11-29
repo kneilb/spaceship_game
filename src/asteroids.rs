@@ -32,8 +32,10 @@ impl Plugin for AsteroidPlugin {
         app.insert_resource(SpawnTimer {
             timer: Timer::from_seconds(SPAWN_TIME_SECONDS, TimerMode::Repeating),
         })
-        .add_systems(Update, (spawn_asteroid, spin_asteroids))
-        .add_systems(Update, handle_asteroid_collision);
+        .add_systems(
+            Update,
+            (spawn_asteroid, spin_asteroids, handle_asteroid_collision),
+        );
     }
 }
 

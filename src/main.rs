@@ -7,6 +7,7 @@ mod despawn;
 mod movement;
 mod schedule;
 mod spaceship;
+mod state;
 
 use bevy::prelude::*;
 
@@ -30,6 +31,7 @@ fn main() {
         .add_plugins(collision_detection::CollisionDetectionPlugin)
         .add_plugins(despawn::DespawnPlugin)
         .add_plugins(schedule::SchedulePlugin)
+        .add_plugins(state::StatePlugin)
         // .add_plugins(debug::DebugPlugin)
         .run();
 }

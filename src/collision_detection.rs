@@ -127,7 +127,7 @@ fn handle_collision<T>(
     }
 }
 
-pub fn apply_collision_damage(
+fn apply_collision_damage(
     mut collision_event_reader: EventReader<CollisionEvent>,
     mut health_query: Query<&mut Health>,
     collision_damage_query: Query<&CollisionDamage>,

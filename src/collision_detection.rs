@@ -2,8 +2,7 @@
 // bevy rapier or bevy xpbd
 
 use bevy::prelude::*;
-
-use std::collections::HashMap;
+use bevy::utils::HashMap;
 
 use crate::{
     asteroids::Asteroid,
